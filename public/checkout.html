@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | ShopEasy</title>
+  <link rel="icon" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="navbar"></header>
+  <main class="container">
+    <h1>Checkout</h1>
+    <div class="two-col">
+      <div class="box">
+        <h2>Shipping details</h2>
+        <form id="checkout-form" class="form-card" novalidate>
+          <label for="name">Full name</label>
+          <input type="text" id="name">
+          <label for="phone">Mobile number</label>
+          <input type="tel" id="phone" maxlength="10" placeholder="10 digit number">
+          <label for="address">Address</label>
+          <textarea id="address" rows="3"></textarea>
+          <label for="city">City</label>
+          <input type="text" id="city">
+          <label for="pincode">PIN code</label>
+          <input type="text" id="pincode" maxlength="6">
+          <label>Payment method</label>
+          <input type="text" value="Cash on Delivery (COD)" disabled>
+          <div id="error" class="error-msg" hidden></div>
+          <button class="btn btn-block" type="submit" id="place-btn">Place Order</button>
+        </form>
+      </div>
+      <div class="box" id="summary"><p class="muted">Loading summary...</p></div>
+    </div>
+  </main>
+  <footer>ShopEasy - internship project</footer>
+  <script src="/js/app.js"></script>
+  <script src="/js/checkout.js"></script>
+</body>
+</html>

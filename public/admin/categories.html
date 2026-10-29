@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Categories | ShopEasy Admin</title>
+  <link rel="icon" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="navbar"></header>
+  <main class="container">
+    <h1>Manage Categories</h1>
+    <div class="box" style="margin-bottom:20px">
+      <form id="cat-form" style="display:flex; gap:10px; flex-wrap:wrap">
+        <input type="text" id="cat-name" placeholder="New category name" style="flex:1; min-width:200px">
+        <button class="btn" type="submit">Add category</button>
+      </form>
+    </div>
+    <div id="table"><p class="muted">Loading...</p></div>
+  </main>
+  <footer>ShopEasy admin panel</footer>
+  <script src="/js/app.js"></script>
+  <script src="/js/admin-categories.js"></script>
+</body>
+</html>

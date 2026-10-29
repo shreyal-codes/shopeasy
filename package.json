@@ -1,0 +1,19 @@
+{
+  "name": "shopeasy",
+  "version": "1.0.0",
+  "description": "ShopEasy - simple e-commerce MVP (Node.js, Express, SQLite)",
+  "main": "server/app.js",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node --watch server/app.js",
+    "db:reset": "node server/reset.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
