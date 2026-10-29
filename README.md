@@ -4,9 +4,9 @@ ShopEasy is a small full-stack online shopping website. Customers can browse pro
 
 Built as my internship project (individual MVP) with **HTML, CSS, vanilla JavaScript, Node.js, Express and SQLite**.
 
-Author: shreyal choudhary &nbsp;|&nbsp; 
-Internship / Batch: shreyal choudhary &nbsp;|&nbsp; 
-Submitted: 29/10/2026
+**Author: shreyal choudhary &nbsp;|&nbsp;**
+**Internship / Batch: web development/ aug-oct &nbsp;|&nbsp;** 
+**Submitted: 29/10/2026**
 
 ---
 
