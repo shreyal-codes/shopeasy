@@ -283,12 +283,36 @@ POST /api/auth/login
 
 ## Problems I faced and what I learned
 
-*(Edit this section and write it in your own words. A few honest, specific points are better than a long generic list. Ideas below.)*
+## Problems I faced and what I learned
 
-- Understanding why prices should be stored as integers instead of decimals.
-- Using a transaction so stock never goes wrong if one step of checkout fails.
-- Why role checks must happen on the server and not only in JavaScript.
-- Escaping text before putting it into `innerHTML`.
+1. **`npm install` failed on Windows (better-sqlite3).**
+   The native SQLite package tried to compile from source on my Node 24 setup and needed Python and C++ build tools, which I did not have. I fixed it by switching to Node's built-in `node:sqlite` module and wrapping it in `server/db.js`, so the controllers could keep the same style of queries. I learned that native packages can break across Node versions and that checking the built-in options first can save time.
+
+2. **Project would not start from the wrong folder.**
+   `npm install` failed because I ran it in the outer folder instead of the folder containing `package.json`. I learned to check with `dir package.json` before running npm commands.
+
+3. **File lock errors inside OneDrive (EBUSY / EPERM).**
+   OneDrive was syncing `node_modules` while npm was writing to it. Keeping projects outside synced folders avoids this.
+
+4. **Understanding why prices are stored as integers.**
+   Storing prices in paise avoids floating point rounding errors when calculating totals.
+
+5. **Making checkout safe with a transaction.**
+   Creating the order, saving order items, reducing stock and emptying the cart must all succeed together. A database transaction rolls everything back if any step fails.
+
+6. **Role checks must happen on the server.**
+   Hiding admin links in JavaScript is not security. The server reads the role from the signed JWT, so a customer gets a 403 on admin APIs.
+
+7. **Preventing XSS.**
+   Text from the database is escaped with an `esc()` function before it is placed into the page with `innerHTML`.
+
+8. Understanding why prices should be stored as integers instead of decimals.
+
+9.Using a transaction so stock never goes wrong if one step of checkout fails.
+
+11. Why role checks must happen on the server and not only in JavaScript.
+
+12. Escaping text before putting it into `innerHTML`.
 
 ## Future improvements
 
